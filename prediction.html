@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 8px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>House Price Prediction Form</h2>
+    <form action="{{ url_for('predict') }}" method="POST">
+        
+        <!-- Bedrooms -->
+        <div class="form-group">
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" name="bedrooms" id="bedrooms" required min="1">
+        </div>
+
+        <!-- Builder -->
+        <div class="form-group">
+            <label for="builder">Builder:</label>
+            <select name="builder" id="builder" required>
+                <option value="builder_a">Builder A</option>
+                <option value="builder_b">Builder B</option>
+            </select>
+        </div>
+
+        <!-- Locality -->
+        <div class="form-group">
+            <label for="locality">Locality:</label>
+            <select name="locality" id="locality" required>
+                <option value="locality_1">Locality 1</option>
+                <option value="locality_2">Locality 2</option>
+            </select>
+        </div>
+
+        <!-- Prime Location -->
+        <div class="form-group">
+            <label for="prime_location">Prime Location:</label>
+            <select name="prime_location" id="prime_location" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <!-- Property Type -->
+        <div class="form-group">
+            <label for="property_type">Property Type:</label>
+            <select name="property_type" id="property_type" required>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+            </select>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit">Predict Price</button>
+    </form>
+
+</body>
+</html>
